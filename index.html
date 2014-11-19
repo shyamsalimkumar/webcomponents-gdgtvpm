@@ -4,37 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>body { margin: 0; padding: 0; width: 100vw; height: 100vh; }</style>
-    <!-- <link rel="import" href="components/shopping-cart-item/main.html"> -->
+    <link rel="import" href="components/shopping-cart-item/main.html">
 </head>
 <body>
-    <template id="shopping-cart-item">
-        <style type="text/css">
-        @host {
-            width: 100%;
-            height: auto;
-        }
-        li div {
-            color: red;
-        }
-        </style>
-        <li>
-            <div><content></content></div>
-        </li>
-    </template>
-    <script>
-    (function(w, d) {
-        var shoppingCartItem = Object.create(HTMLElement.prototype);
-        shoppingCartItem.createdCallback = function() {
-            var myShadow = this.createShadowRoot();
-            var template = d.querySelector('#shopping-cart-item');
-            var clone = d.importNode(template.content, true);
-            myShadow.appendChild(clone);
-        };
-        d.registerElement('shopping-cart-item', {
-            prototype: shoppingCartItem
-        });
-    })(window, document);
-    </script>
     <template id="shopping-cart">
         <!-- <link rel="import" href="components/shopping-cart-item/main.html"> -->
         <style type="text/css">
